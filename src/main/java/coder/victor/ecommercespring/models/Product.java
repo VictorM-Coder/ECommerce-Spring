@@ -21,7 +21,8 @@ public class Product {
     @Getter
     private BigDecimal price;
 
-    Set<StoredFile> images;
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<StoredFile> images;
 
     public void setPrice(BigDecimal newPrice) {
         if (newPrice == null) {
