@@ -22,4 +22,16 @@ public class Product {
     private BigDecimal price;
 
     Set<StoredFile> images;
+
+    public void setPrice(BigDecimal newPrice) {
+        if (newPrice == null) {
+            throw new IllegalArgumentException("Price cannot be null");
+        }
+
+        if (newPrice.compareTo(BigDecimal.ZERO) < 0) {
+            throw new IllegalArgumentException("Price can't be negative");
+        }
+
+        this.price = newPrice;
+    }
 }
