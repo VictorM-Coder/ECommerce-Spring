@@ -1,13 +1,11 @@
 package coder.victor.ecommercespring.models;
 
 import jakarta.persistence.*;
-import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.util.UUID;
 
 @Entity
-@NoArgsConstructor
 @Table(name = "order_items")
 public class OrderItem {
     @Id
@@ -28,6 +26,10 @@ public class OrderItem {
         this.product = product;
         this.quantity = quantity;
         this.individualPrice = product.getPrice();
+    }
+
+    public OrderItem() {
+
     }
 
     public BigDecimal getTotalPrice() {

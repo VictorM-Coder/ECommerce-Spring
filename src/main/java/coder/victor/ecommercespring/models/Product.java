@@ -1,9 +1,7 @@
 package coder.victor.ecommercespring.models;
 
-import coder.victor.ecommercespring.storedfiles.StoredFile;
+import coder.victor.ecommercespring.documents.domain.StoredFile;
 import jakarta.persistence.*;
-import lombok.Getter;
-
 import java.math.BigDecimal;
 import java.util.Set;
 import java.util.UUID;
@@ -18,7 +16,6 @@ public class Product {
     private String name;
     private String description;
 
-    @Getter
     private BigDecimal price;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
@@ -34,5 +31,9 @@ public class Product {
         }
 
         this.price = newPrice;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
     }
 }
