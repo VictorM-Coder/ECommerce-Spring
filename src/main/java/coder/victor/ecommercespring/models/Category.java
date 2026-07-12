@@ -3,6 +3,7 @@ package coder.victor.ecommercespring.models;
 import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+import org.hibernate.validator.constraints.br.CNPJ;
 
 import java.time.Instant;
 import java.util.UUID;
@@ -13,6 +14,7 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
+    @CNPJ
     @CreationTimestamp
     @Column(name = "created_at")
     private Instant createdAt;

@@ -1,5 +1,7 @@
 package coder.victor.ecommercespring.documents.domain;
 
+import coder.victor.ecommercespring.config.exceptions.ApiException;
+import coder.victor.ecommercespring.documents.exceptions.DocumentsErrorCode;
 import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -23,4 +25,15 @@ public class StoredFile {
     private Instant updatedAt;
 
     private String url;
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void updateUrl(String url) {
+        if (url == null || url.trim().isEmpty()) {
+            throw new ApiException(DocumentsErrorCode.DOCUMENT_URL_CANNOT_BE_NULL_OR_EMPTY);
+        }
+        this.url = url;
+    }
 }
