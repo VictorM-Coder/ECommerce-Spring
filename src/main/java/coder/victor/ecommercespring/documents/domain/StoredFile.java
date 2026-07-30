@@ -33,22 +33,22 @@ public class StoredFile {
     @JoinColumn(name = "last_update_by_id")
     private User lastUpdateBy;
 
-    private String url;
+    private String urlPath;
 
-    public String getUrl() {
-        return url;
+    public String getUrlPath() {
+        return urlPath;
     }
 
     public void updateUrl(String url, User user) {
         if (url == null || url.trim().isEmpty()) {
             throw new ApiException(DocumentsErrorCode.DOCUMENT_URL_CANNOT_BE_NULL_OR_EMPTY);
         }
-        this.url = url;
+        this.urlPath = url;
         this.lastUpdateBy = user;
     }
 
     public boolean hasUrl() {
-        return url != null && !url.trim().isEmpty();
+        return urlPath != null && !urlPath.trim().isEmpty();
     }
 
     public User getLastUptadeBy() {

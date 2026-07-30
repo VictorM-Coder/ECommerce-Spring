@@ -50,7 +50,7 @@ public class StoredFileTest {
 
         assertTrue(storedFile.hasUrl());
         assertEquals(USER_MOCKED, storedFile.getLastUptadeBy());
-        assertEquals(VALID_URL, storedFile.getUrl());
+        assertEquals(VALID_URL, storedFile.getUrlPath());
     }
 
     @DisplayName("Test hasUrl should return false when url is null or empty")
