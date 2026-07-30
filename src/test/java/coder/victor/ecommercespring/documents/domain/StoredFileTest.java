@@ -2,7 +2,7 @@ package coder.victor.ecommercespring.documents.domain;
 
 import coder.victor.ecommercespring.config.exceptions.ApiException;
 import coder.victor.ecommercespring.documents.exceptions.DocumentsErrorCode;
-import coder.victor.ecommercespring.models.User;
+import coder.victor.ecommercespring.users.domain.User;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
